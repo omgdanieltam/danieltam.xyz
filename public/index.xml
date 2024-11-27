@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Daniel&#39;s Texts</title>
+        <link>http://localhost:1313/</link>
+        <description>Recent content on Daniel&#39;s Texts</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 27 Nov 2024 00:09:41 -0600</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Project Outfox on Arch Linux with Betson P2IO</title>
+        <link>http://localhost:1313/post/p2io-arch/</link>
+        <pubDate>Wed, 27 Nov 2024 00:09:41 -0600</pubDate>
+        
+        <guid>http://localhost:1313/post/p2io-arch/</guid>
+        <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction
+&lt;/h2&gt;&lt;p&gt;I previously purchased a Betson Supernova 2 almost complete with working hardware except a monitor (that nice Kortek monitor 😔). And while I do enjoy older DDR mixes, I&amp;rsquo;m a big fan of custom tracks and perfer to have Stepmania install. I ran the &lt;a class=&#34;link&#34; href=&#34;https://github.com/chrispable/stepmania/tree/starworlds&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Stepmania Starworlds&lt;/a&gt; branch for a while but I the branch is no longer updated so it was up to other forks to implement the P2IO/P3IO library.&lt;/p&gt;
+&lt;p&gt;This is when I found out about &lt;a class=&#34;link&#34; href=&#34;https://projectoutfox.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Project Outfox&lt;/a&gt; which is a continuation of Stepmania 5. This is when I found out that I &lt;strong&gt;had&lt;/strong&gt; to run Windows 7 and that I got luckly last time running Starworlds that I installed it onto a Windows 7 machine. Without knowing the full technical details, it had something to do with the USB stack in anything above Windows 7. So I did what everyone else did, installed Windows 7 onto my old Dell Latitude E6420 laptop, hooked everything up and played Stepmania.&lt;/p&gt;
+&lt;p&gt;Now since I was running older hardware, I started to run into some hardware related issues. Performance was not great with the hardware I had, and I didn&amp;rsquo;t want to buy some other old hardware that may potentionally be better. I did have something a little better with a Dell Optiplex I had with an i5-4570 and then I had a spare video card with a RX550. While the hardware isn&amp;rsquo;t great, it&amp;rsquo;s better. I at first put Windows 7 onto it and I found that while the performance did improve, it wasn&amp;rsquo;t perfect still.&lt;/p&gt;
+&lt;p&gt;Project Outfox did have Linux builds, but it didn&amp;rsquo;t really seemed that anyone was running the Linux version of Project Outfox with a Betson P2IO. I put Xubuntu 24.04 onto a drive, installed it onto a spare SSD I had and gave it a try. To my surprise, it worked without any issues. Now this made me think, why not use my perfer distro: Arch Linux to create my new setup.&lt;/p&gt;
+&lt;h2 id=&#34;arch-linux-setup&#34;&gt;Arch Linux Setup
+&lt;/h2&gt;&lt;p&gt;I&amp;rsquo;ve set up Arch Linux a few too many times and was a bit lazier now to run through the wiki and do the manual install. I saw they introduced the &lt;code&gt;archinstall&lt;/code&gt; script so I decided to try that out. During the setup, I select Pipewire as the audio server and NetworkManager as the network manager. It worked great and I now had a working Arch Linux install.&lt;/p&gt;
+&lt;p&gt;To fix my user groups:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo usermod -aG audio,video,input,wheel &amp;lt;username&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the programs I installed:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S xorg xorg-apps xorg-xinit thunar firefox alacritty openbox ttf-dejavu ttf-liberation vim nano
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;I was reading a bit and found that compositors sometimes cause extra latency and may not be the best for pure performance. This ruled out Wayland as those compositors are linked together so I was going to stick with Xorg. With a pure windows manager, I wanted something easy to use and configure so I decided on Openbox.&lt;/p&gt;
+&lt;h3 id=&#34;openbox&#34;&gt;Openbox
+&lt;/h3&gt;&lt;p&gt;Following the Arch Linux &lt;a class=&#34;link&#34; href=&#34;https://wiki.archlinux.org/title/Openbox&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Openbox Wiki&lt;/a&gt;, I configured my Openbox setup. I wanted a simple menu config that has almost nothing in it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p ~/.config/openbox
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -a /etc/xdg/openbox ~/.config/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim ~/.config/openbox/menu.xml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;autostart&#34;&gt;Autostart
+&lt;/h3&gt;&lt;p&gt;I wanted my system to automatically log in and start Outfox. This requires that we set it so that it auto logs into the &lt;a class=&#34;link&#34; href=&#34;https://wiki.archlinux.org/title/Getty#Automatic_login_to_virtual_console&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;virtual terminal&lt;/a&gt;, start &lt;a class=&#34;link&#34; href=&#34;https://wiki.archlinux.org/title/Xinit#Autostart_X_at_login&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Xorg&lt;/a&gt; and &lt;a class=&#34;link&#34; href=&#34;https://wiki.archlinux.org/title/Xinit#xinitrc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Openbox&lt;/a&gt;, then start &lt;a class=&#34;link&#34; href=&#34;https://wiki.archlinux.org/title/Openbox#Starting&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Outfox&lt;/a&gt;.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
