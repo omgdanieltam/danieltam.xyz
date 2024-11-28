@@ -13,11 +13,11 @@ I finally upgraded my Framework 13 to the new one running an [Intel 14th gen Ult
 I found out that [people](https://www.reddit.com/r/eGPU/comments/17vgjcc/egpu_thunderbolt_vs_usb4_adt_link_ut3g_tutorial/) had been doing testing with some newer adapters and that the new hot item was the [ADT-Link UT3G](https://www.adt.link/product/UT3G.html). This is a USB4 adapter and it runs on PCIe 4.0 Since my RTX 3080 Ti was also PCIe 4.0, I could take advantage of the higher bandwidth this adapter supports. Since it is USB4, it did not support USB PD for charging; but I was fine with that, I had another dongle that I was using for charging anyways that was a 'mini dock'.
 
 # The Dilemma
-The ADT-Link UT3G is really just a PCB on a board and it's not really the prettiest. On the other hand, the Razer Core X enclosure is pretty nice too look at. So ideally, I would try to put the ADT-Link UT3G into the Razer Core X. I was not the first to think of doing this, and it turns out I'm [not the first](https://egpu.io/forums/thunderbolt-enclosures/question-modding-razer-core-x-chroma-to-oculink-and-or-pcie-4-0/) to think of this.
+The ADT-Link UT3G is really just a PCB on a board and it's not really the prettiest. On the other hand, the Razer Core X enclosure is pretty nice too look at. So ideally, I would try to put the ADT-Link UT3G into the Razer Core X. I was not the first to think of doing this, and it turns out I'm [not the first](c:\Users\Daniel Tam\Desktop\ddr-install\razer1.jpg) to think of this.
 
 Turns out with the PSU within the Razer Core X, it sits flush along the UT3G. While that may not sound like a problem initially, it turns out that the UT3G has the power and USB connector sitting on the side that faces the PSU. This means that there's no space to plug in power nor the USB cable!
 
-![Courtesy of nando4 @ egpu.io](razer1.jpg)
+![Courtesy of @theodoros_antoniou on egpu.io](razer1.jpg)
 
 Well, the UT3G does fit within the Razer Core X enclosure, so it's not exactly the end of this idea. If I switched to a smaller PSU, in the SFX format rather than the ATX format, it would solve that dilemma. While it may not have the exact same look with the different hardware within the enclosure, it would still look good from the front and sides, just not the back. I figured that since I have a 3D printer, I could print some way to mount the UT3G within the enclosure, and print some way to mount the PSU.
 
