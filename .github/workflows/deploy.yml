@@ -1,0 +1,37 @@
+name: Deploy Hugo
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4.2.2
+
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: 'latest'
+        extended: true
+
+    - name: Build Hugo
+      run: hugo --minify
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.IAM_ROLE }}
+        role-duration-seconds: 900
+        aws-region: us-east-2
+
+    - name: Sync to AWS S3
+      run: |
+        aws s3 sync public s3://www.danieltam.xyz
