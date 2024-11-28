@@ -34,4 +34,5 @@ jobs:
 
     - name: Sync to AWS S3
       run: |
-        aws s3 sync public s3://www.danieltam.xyz
+        ls public/
+        aws s3 sync public/ s3://www.danieltam.xyz
