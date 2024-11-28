@@ -22,7 +22,7 @@ Turns out with the PSU within the Razer Core X, it sits flush along the UT3G. Wh
 Well, the UT3G does fit within the Razer Core X enclosure, so it's not exactly the end of this idea. If I switched to a smaller PSU, in the SFX format rather than the ATX format, it would solve that dilemma. While it may not have the exact same look with the different hardware within the enclosure, it would still look good from the front and sides, just not the back. I figured that since I have a 3D printer, I could print some way to mount the UT3G within the enclosure, and print some way to mount the PSU.
 
 # Hardware
-I wanted to reuse as much hardware as I could. This meant screws and mounts were all re-used from what was on both the UT3G and Razer Core X. I had a spare SFX power supply I wasn't using as well which meant the real price I had to purchase was just a power cable.
+I wanted to reuse as much hardware as I could. This meant screws and mounts were all re-used from what was on both the UT3G and Razer Core X. I had a spare SFX power supply I wasn't using as well which meant the only piece I had to purchase was a power cable.
 
 - [ADT-Link UT3G](https://www.aliexpress.us/item/3256806035240326.html?gatewayAdapt=glo2usa4itemAdapt)
 - [Razer Core X](https://www.razer.com/mena-en/gaming-laptops/razer-core-x)
@@ -66,6 +66,6 @@ The final assembly should look like:
 
 This should fit back into the enclosure, and with my GPU, it was a bit **snug**. But it worked. The back is not the prettiest but no one should ideally be looking at the back of the device.
 
-![Razer Core X with UT3G - Back view](razer-back.jpg)
+![Razer Core X with UT3G - Back view](razer-back.jpg) ![Razer Core X with UT3G - Side view](razer-side.jpg)
 
 I have yet to benchmark this and see how performance is with my setup. But I have played some games (CS2) and it seemed to perform well enough for my taste at the time being.
