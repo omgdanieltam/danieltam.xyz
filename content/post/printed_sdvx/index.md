@@ -2,7 +2,7 @@
 date = '2024-12-21T07:32:16Z'
 draft = false
 title = '3D Printed Sound Voltex Controller'
-image = 'top-button-install.webp'
+image = 'final.webp'
 +++
 
 # Introduction
