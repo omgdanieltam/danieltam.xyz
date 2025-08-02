@@ -2,17 +2,17 @@
 date = '2024-11-27T00:09:41-06:00'
 draft = false
 image = 'banner.jpg'
-title = 'Project OutFox on Arch Linux with Betson P2IO'
+title = 'Project OutFox on Arch Linux with P2IO'
 +++
 
 ## Introduction
-I previously purchased a Betson Supernova 2 almost complete with working hardware except a monitor (that nice Kortek monitor 😔). And while I do enjoy older DDR mixes, I'm a big fan of custom tracks and perfer to have Stepmania install. I ran the [Stepmania Starworlds](https://github.com/chrispable/stepmania/tree/starworlds) branch for a while but the branch is no longer updated so it was up to other forks to implement the P2IO/P3IO library.
+I previously purchased a Supernova 2 almost complete with working hardware except a monitor. And while I do enjoy older DDR mixes, I'm a big fan of custom tracks and perfer to have Stepmania install. I ran the [Stepmania Starworlds](https://github.com/chrispable/stepmania/tree/starworlds) branch for a while but the branch is no longer updated so it was up to other forks to implement the P2IO/P3IO library.
 
 This is when I found out about [Project OutFox](https://projectoutfox.com/) which is a continuation of Stepmania 5. This is when I found out that I **had** to run Windows 7 and that I got lucky last time running Starworlds that I installed it onto a Windows 7 machine. Without knowing the full technical details, it had something to do with the USB stack in anything above Windows 7. So I did what everyone else did, installed Windows 7 onto my old Dell Latitude E6420 laptop, hooked everything up and played Stepmania.
 
 Now since I was running older hardware, I started to run into some hardware related issues. Performance was not great with the hardware I had, and I didn't want to buy some other old hardware that may potentionally be better. I did have something a little better with a Dell Optiplex 3020 I had with an Intel i5-4570 and then I had a spare video card with a AMD RX550. While the hardware isn't great, it's better. At first I put Windows 7 onto it and while the performance did improve, it wasn't great still.
 
-Project OutFox did have Linux builds, but it didn't really seemed that anyone was running the Linux version of Project OutFox with a Betson P2IO. I put Xubuntu 24.04 onto a drive, installed it onto a spare SSD I had and gave it a try. To my surprise, it worked without any issues. Now I wanted to build my own Stepmania machine with Arch Linux to give it the customization I wanted.
+Project OutFox did have Linux builds, but it didn't really seemed that anyone was running the Linux version of Project OutFox with a P2IO. I put Xubuntu 24.04 onto a drive, installed it onto a spare SSD I had and gave it a try. To my surprise, it worked without any issues. Now I wanted to build my own Stepmania machine with Arch Linux to give it the customization I wanted.
 
 ## Arch Linux Setup
 I've set up Arch Linux a few too many times and was a bit lazier now to run through the wiki and do the manual install. I saw they introduced the `archinstall` script so I decided to try that out. During the setup, I selected Pipewire as the audio server and NetworkManager as the network manager. archinstall was pretty simple and easy, giving me a full working Arch Linux machine quickly.
