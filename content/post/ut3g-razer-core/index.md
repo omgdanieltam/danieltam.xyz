@@ -38,7 +38,7 @@ If anyone is trying to replicate this build, it'll probably be best to 3D print 
 These the STL files for the 3D printed parts. I'm not a CAD artist by any means so they're all very **very** basic shapes:
 - [Bottom plate](razer-bottom-plate-full.stl): This mounts the UT3G into the enclosure
 - [Fan stand](razer-fan-stand.stl): This mounts the 120mm fan into the enclosure and has a bracket to help support the PSU
-- [PSU holder](razerx-pus-holder-5.stl): This mounts the SFX PSU
+- [PSU holder](sfx-bracket-razer-psu.stl): This mounts the SFX PSU
 
 ## Disassembly
 I had to first remove all parts and screws from **both** the UT3G and the Razer Core X. I wanted to re-use the screw it came with so I tried to design everything around these.
