@@ -7,3 +7,10 @@ A just for fun personal blog about random things I'm working on.
 The site is hosted in AWS S3 as a static site behind CloudFlare.
 
 Using [Hugo](www.gohugo.io) as a static site generator. The Hugo theme in use is: [Dream](https://github.com/CaiJimmy/hugo-theme-stack)
+
+# Adding content
+## New posts
+In order to create new posts run:
+```
+hugo new content content/post/<post name>/index.md
+```
