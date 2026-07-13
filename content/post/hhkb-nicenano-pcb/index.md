@@ -1,6 +1,6 @@
 +++
 date = '2026-07-13T19:47:08Z'
-draft = false
+draft = true
 title = 'nice!nano PCB carrier for HHKB'
 +++
 
