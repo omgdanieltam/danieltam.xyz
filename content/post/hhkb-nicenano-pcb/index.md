@@ -1,7 +1,8 @@
 +++
 date = '2026-07-13T19:47:08Z'
-draft = true
-title = 'nice!nano PCB carrier for HHKB'
+draft = false
+title = 'nice!nano PCB carrier for HHKB with ZMK'
+image = 'title.webp'
 +++
 
 ## Introduction
@@ -11,8 +12,9 @@ Previously, I modded it using [Hasu's TMK board](https://geekhack.org/index.php?
 
 And so, the quest began for looking for something that would give me something that fit the requirements:
 1. Wireless (bluetooth or 2.4ghz)
-2. Compatibile with HHKB (no replacement or alternative keyboards)
+2. Compatible with HHKB (no replacement or alternative keyboards)
 3. Low (enough) latency
+4. Doesn't require modification to the HHKB case (drilling out zthe mini-usb port for usb-c)
 
 Looking at some [documentation](https://hhkb.io/modding/controllers/), it showed that there was an alternative made by a user under the name Yang. But, it seemed like this product was discontinued even though it fit the requirements that I needed (I was a few years too late). Disappointed, but it did force me to do more research into alternatives.
 
@@ -25,14 +27,45 @@ Designing the PCB was simple as I did not have to worry about any components oth
 
 Hasu was nice enough to [open source](https://github.com/tmk/HHKB_controller) their controller so I was able to use some of their design to help with mine. Mainly, I needed the dimension of the PCB.
 
-### Components
+### Parts list
 The few components that I designed this around was:
 - [nice!nano](https://typeractive.xyz/products/nice-nano)
 - [S13B-ZR](https://www.digikey.com/en/products/detail/jst-sales-america-inc/S13B-ZR/926587): Connector for HHKB
 - [S2B-PH-K-S](https://www.digikey.com/en/products/detail/jst-sales-america-inc/S2B-PH-K-S/926626): Battery connector
 - [TS11-647-55-BK-160-RA-D](https://www.digikey.ie/en/products/detail/same-sky-formerly-cui-devices/TS11-674-55-BK-160-RA-D/16562822): Reset button
 - [SLW-913535-2A-SMT](https://www.digikey.com/en/products/detail/same-sky-formerly-cui-devices/SLW-913535-2A-SMT/21259974): Power slider
+- HHKB Pro 2
+- PKCELL LP803860 3.7V 2000 mAh LiPo Battery
 
-### KiCad
+## KiCad
 KiCad was new and pretty straightforward actually. I can't say that my design is good, but it was my first try and I tried to get it mostly 'correct'. I did learn a lot from it and it was a joy to try to make a design in it. Since it's just a carrier board, it probably took the load off of me since I didn't really have to worry about much other than not crossing any wires.
 
+![KiCad traces](kicad-pcb.webp) ![KiCad 3D model](kicad-3d-model.webp)
+
+### 3D Print
+I actually 3D printed my model first to test the fitment on the HHKB. This allowed me to ensure that the pieces I wanted fit where I wanted and I could make minor adjustments before sending it out to be made. Even though the through holes did not properly print, it gave me a good enough fitment to move forward.
+
+![3D printed with components](3d-print.webp) ![3D printed fitment check](3d-print-fitment.webp)
+
+### PCB
+I sent the KiCad files to get it built out at [JLCPCB](https://jlcpcb.com/). The process was relatively easy as I just uploaded my files and hit submit. They did a quick review and it was shipped out the next day and arrived in a few days. Quite the quick turnaround. Upon arrival, the PCB looks like I expected which was good news. I tested fitment on it and of course, it all fits perfectly.
+
+![PCB](pcb-bare.webp) ![PCB with components](pcb-test-comp.webp)
+
+## Assembly
+It was time to solder everything down. I used through hole mounts for everything as I do have any way to surface mount everything. My soldering isn't the best here, but it's good enough. I tested all my connections and it was good to go.
+
+![PCB soldering](pcb-solder.webp)
+
+## Final assembly
+Something that I realized when attempting to mount into the case was that the bottom couple pins of the through hole mount for the nice!nano was causing it not to fit in the case properly. It would not sit flush and thus cause issues with closing the case. I simply just grab some clippers and clipped off the bottom pins.
+
+![PCB trimming](pcb-solder-cut.webp) ![PCB fitment check](pcb-fitment.webp) ![Final assembly](pcb-final.webp)
+
+I'd need to get a cover for the mini usb port, but it's okay for now.
+![HHKB top view](top-holes.webp)
+
+## Flashing firmware
+This part was more daunting than I thought it would be. I simply just forked [kanru's](https://github.com/kanru/hhkb-zmk) code and it automatically built the firmware for it. Upon plugging it into my system, it automatically show up as a device as something that I could drop my .uf2 file onto and was good to go.
+
+I didn't make any changes to the firmware as of right now as I'm satisfied with the default settings that kanru used. But, I did upload my KiCad files to my own [repo](https://github.com/omgdanieltam/hhkb-zmk).
