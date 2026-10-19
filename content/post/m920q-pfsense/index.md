@@ -1,7 +1,7 @@
 +++
 date = '2026-05-17T14:51:50Z'
 draft = false
-title = 'Lenovo ThinkCentre M290q, pfSense, and 10GbE'
+title = 'Lenovo ThinkCentre M920q, pfSense, and 10GbE'
 image = 'title.webp'
 +++
 
